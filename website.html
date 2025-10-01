@@ -14,18 +14,41 @@
 </script></div>
     
     <!-- Navigation -->
-    <nav class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mt-4 mr-auto ml-auto pt-2 pr-20 pb-2 pl-20">
+    <nav class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mt-2 sm:mt-4 mr-auto ml-auto pt-2 pr-4 sm:pr-20 pb-2 pl-4 sm:pl-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between h-14 sm:h-16">
           <div class="flex items-center gap-3">
-            
-            <span class="text-lg font-medium tracking-tight font-geist text-neutral-100" style="">SHAN ENTERPRISES</span>
+            <span class="text-base sm:text-lg font-medium tracking-tight font-geist text-neutral-100" style="">SHAN ENTERPRISES</span>
           </div>
-          <div class="flex items-center gap-6">
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-6">
             <a href="#about" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" style="">About</a>
             <a href="#products" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" style="">Products</a>
             <a href="#contact" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" style="">Contact</a>
             <button onclick="openQuoteModal()" class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm transition-colors font-geist border-white/10 bg-white/5 text-neutral-100 hover:bg-white/10 cursor-pointer" style="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              Get Quote
+            </button>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden text-neutral-400 hover:text-neutral-100 transition-colors" onclick="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <path d="M3 12h18"></path>
+              <path d="M3 6h18"></path>
+              <path d="M3 18h18"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 mt-4 pt-4 pb-4">
+          <div class="flex flex-col space-y-4">
+            <a href="#about" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" onclick="closeMobileMenu()">About</a>
+            <a href="#products" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" onclick="closeMobileMenu()">Products</a>
+            <a href="#contact" class="text-sm transition-colors font-geist text-neutral-400 hover:text-neutral-100" onclick="closeMobileMenu()">Contact</a>
+            <button onclick="openQuoteModal(); closeMobileMenu();" class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm transition-colors font-geist border-white/10 bg-white/5 text-neutral-100 hover:bg-white/10 cursor-pointer w-fit" style="">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               Get Quote
             </button>
@@ -35,20 +58,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden sm:py-10 pt-20 pb-10">
+    <section class="relative overflow-hidden sm:py-10 pt-16 pb-10">
       
       
-      <div class="relative max-w-6xl sm:px6 lg:px-8 min-h-[520px] sm:min-h-[640px] lg:min-h-[760px] flex flex-col bg-neutral-950 bg-[url('hero-heatsink.png')] bg-cover bg-center rounded-3xl mr-auto ml-auto pt-10 pr-20 pb-10 pl-20" style="container-type: inline-size;">
+      <div class="relative max-w-6xl sm:px6 lg:px-8 min-h-[480px] sm:min-h-[640px] lg:min-h-[760px] flex flex-col bg-neutral-950 bg-[url('hero-heatsink.png')] bg-cover bg-center rounded-3xl mr-auto ml-auto pt-6 sm:pt-10 pr-4 sm:pr-20 pb-6 sm:pb-10 pl-4 sm:pl-20" style="container-type: inline-size;">
   <!-- Title at top -->
-  <header class="sm:mb-16 mb-12">
-    <h1 class="text-[8vw] sm:text-[7vw] md:text-[6vw] lg:text-[5.5vw] font-semibold tracking-tight font-geist text-white leading-tight">
-      <span class="block mb-2">Precision Cooling.</span>
+  <header class="sm:mb-16 mb-8">
+    <h1 class="text-[6vw] sm:text-[7vw] md:text-[6vw] lg:text-[5.5vw] font-semibold tracking-tight font-geist text-white leading-tight">
+      <span class="block mb-1 sm:mb-2">Precision Cooling.</span>
       <span class="block">Peak Performance.</span>
     </h1>
   </header>
 
   <!-- Content -->
-  <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 mt-auto">
+  <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 mt-auto">
      <!-- Left: Empty space -->
     <div class="flex flex-col justify-between">
       <div class="hidden sm:block"></div>
@@ -58,39 +81,39 @@
      </div>
      
      <!-- Right: All content moved here -->
-     <div class="flex flex-col items-start justify-end gap-6">
+     <div class="flex flex-col items-start justify-end gap-4 sm:gap-6">
        <!-- View Products Button -->
           <div class="inline-block bg-transparent">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap'); @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; } @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; } @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; } @property --gradient-shine { syntax: "<color>"; initial-value: #3b82f6; inherits: false; } .shiny-cta { --gradient-angle: 0deg; --gradient-angle-offset: 0deg; --gradient-percent: 20%; --gradient-shine: #3b82f6; --shadow-size: 2px; position: relative; overflow: hidden; border-radius: 9999px; padding: 1.25rem 2.5rem; font-size: 1.125rem; line-height: 1.2; font-weight: 500; color: #ffffff; background: linear-gradient(#000000, #000000) padding-box, conic-gradient( from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #1d4ed8 5%, var(--gradient-shine) 15%, #1d4ed8 30%, transparent 40%, transparent 100% ) border-box; border: 2px solid transparent; box-shadow: inset 0 0 0 1px #1a1818; outline: none; transition: --gradient-angle-offset 800ms cubic-bezier(0.25, 1, 0.5, 1), --gradient-percent 800ms cubic-bezier(0.25, 1, 0.5, 1), --gradient-shine 800ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s; cursor: pointer; isolation: isolate; outline-offset: 4px; font-family: 'Inter', 'Helvetica Neue', sans-serif; z-index: 0; animation: border-spin 2.5s linear infinite; } @keyframes border-spin { to { --gradient-angle: 360deg; } } .shiny-cta:active { transform: translateY(1px); } .shiny-cta::before { content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0; --size: calc(100% - 6px); --position: 2px; --space: 4px; width: var(--size); height: var(--size); background: radial-gradient(circle at var(--position) var(--position), white 0.5px, transparent 0) padding-box; background-size: var(--space) var(--space); background-repeat: space; mask-image: conic-gradient( from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black ); border-radius: inherit; opacity: 0.4; pointer-events: none; } .shiny-cta::after { content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%; aspect-ratio: 1; background: linear-gradient(-50deg, transparent, #1d4ed8, transparent); mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.6; animation: shimmer 4s linear infinite; animation-play-state: running; } .shiny-cta span { position: relative; z-index: 2; display: inline-block; } .shiny-cta span::before { content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: -1; --size: calc(100% + 1rem); width: var(--size); height: var(--size); box-shadow: inset 0 -1ex 2rem 4px #1d4ed8; opacity: 0; border-radius: inherit; transition: opacity 800ms cubic-bezier(0.25, 1, 0.5, 1); animation: breathe 4.5s linear infinite; } @keyframes shimmer { to { transform: translate(-50%, -50%) rotate(360deg);} } @keyframes breathe { 0%, 100% { transform: translate(-50%, -50%) scale(1);} 50% { transform: translate(-50%, -50%) scale(1.20);} }
   </style>
-  <a href="#products" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-sm text-neutral-950 font-geist bg-white rounded-full pt-3 pr-6 pb-3 pl-6 items-center justify-center" style="">View Products<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+  <a href="#products" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-xs sm:text-sm text-neutral-950 font-geist bg-white rounded-full pt-2.5 sm:pt-3 pr-4 sm:pr-6 pb-2.5 sm:pb-3 pl-4 sm:pl-6 items-center justify-center" style="">View Products<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
 </div>
       
        <!-- Manufacturing excellence text -->
-      <p class="text-2xl sm:text-3xl font-geist font-light tracking-tight text-neutral-300" style="">
+      <p class="text-lg sm:text-2xl lg:text-3xl font-geist font-light tracking-tight text-neutral-300 leading-relaxed" style="">
         Manufacturing excellence since <span class="font-semibold text-white" style="">1994</span>, delivering <span class="text-neutral-400" style="">precision</span> anodized heat sinks to <span class="font-semibold text-white" style="">India's leading</span> electronics industry.
       </p>
       
       <!-- Trusted by logos -->
       <div class="w-full">
-        <p class="text-sm font-geist text-neutral-400 mb-4" style="">Trusted by</p>
-        <div class="flex items-center gap-6 flex-wrap">
+        <p class="text-xs sm:text-sm font-geist text-neutral-400 mb-3 sm:mb-4" style="">Trusted by</p>
+        <div class="flex items-center gap-3 sm:gap-6 flex-wrap">
           <!-- BEL -->
-          <div class="h-12 flex items-center">
-            <img src="bel-logo.png" alt="BEL" class="h-12 opacity-90 hover:opacity-100 transition-opacity" style="filter: brightness(0) invert(1);">
+          <div class="h-8 sm:h-12 flex items-center">
+            <img src="bel-logo.png" alt="BEL" class="h-8 sm:h-12 opacity-90 hover:opacity-100 transition-opacity" style="filter: brightness(0) invert(1);">
           </div>
           <!-- WIPRO -->
-          <div class="h-12 flex items-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/320px-Wipro_Primary_Logo_Color_RGB.svg.png" alt="WIPRO" class="h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+          <div class="h-8 sm:h-12 flex items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/320px-Wipro_Primary_Logo_Color_RGB.svg.png" alt="WIPRO" class="h-8 sm:h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
           </div>
           <!-- HAL -->
-          <div class="h-12 flex items-center">
-             <img src="hal-logo.png" alt="HAL" class="h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+          <div class="h-8 sm:h-12 flex items-center">
+             <img src="hal-logo.png" alt="HAL" class="h-8 sm:h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
           </div>
           <!-- TATA -->
-          <div class="h-12 flex items-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/320px-Tata_logo.svg.png" alt="TATA" class="h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+          <div class="h-8 sm:h-12 flex items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/320px-Tata_logo.svg.png" alt="TATA" class="h-8 sm:h-12 opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
           </div>
         </div>
       </div>
@@ -101,20 +124,20 @@
 
     <!-- Journey Section -->
     <section id="about" class="sm:py- pt-0 pb-10">
-      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-10 pr-20 pb-10 pl-20">
-  <div class="animate-[slideUp_0.6s_ease-out] text-center mb-16">
+      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-6 sm:pt-10 pr-4 sm:pr-20 pb-6 sm:pb-10 pl-4 sm:pl-20">
+  <div class="animate-[slideUp_0.6s_ease-out] text-center mb-8 sm:mb-16">
     
-    <h2 class="sm:text-7xl text-4xl font-light text-white tracking-tighter font-geist mb-6" style="">Why Choose Shan Enterprises</h2>
-    <p class="text-lg max-w-2xl mx-auto font-geist text-neutral-400" style="">Three decades of manufacturing excellence, serving India's top electronics companies with precision anodized heat sinks.</p>
+    <h2 class="text-3xl sm:text-7xl font-light text-white tracking-tighter font-geist mb-4 sm:mb-6" style="">Why Choose Shan Enterprises</h2>
+    <p class="text-base sm:text-lg max-w-2xl mx-auto font-geist text-neutral-400 leading-relaxed" style="">Three decades of manufacturing excellence, serving India's top electronics companies with precision anodized heat sinks.</p>
   </div>
 
-  <div class="animate-[slideUp_0.6s_ease-out_0.5s_both] bg-neutral-900/40 border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+  <div class="animate-[slideUp_0.6s_ease-out_0.5s_both] bg-neutral-900/40 border-white/10 border rounded-2xl pt-4 sm:pt-8 pr-4 sm:pr-8 pb-4 sm:pb-8 pl-4 sm:pl-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
       <!-- Left: Why Choose Us Carousel -->
       <div class="relative overflow-hidden border-white/10 border rounded-2xl" id="productCarousel">
         <!-- Slide 1: Experience & Trust -->
         <div class="carousel-slide active bg-gradient-to-br from-blue-900/20 to-blue-800/30 h-full">
-          <div class="relative h-full sm:p-8 flex flex-col justify-between pt-6 pr-6 pb-6 pl-6">
+          <div class="relative h-full sm:p-8 flex flex-col justify-between pt-4 pr-4 pb-4 pl-4 sm:pt-6 sm:pr-6 sm:pb-6 sm:pl-6">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
@@ -316,14 +339,14 @@
     </section><section class="sm:py-0 pt-16 pb-16">
       
     </section>    <section id="products" class="sm:py- pt-0 pb-0">
-      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-10 pr-20 pb-10 pl-20">
-        <div class="animate-[slideUp_0.6s_ease-out] text-center mb-16">
-          <h2 class="sm:text-7xl text-4xl font-light text-white tracking-tighter font-geist mb-6" style="">Our Products</h2>
-          <p class="text-lg max-w-2xl mx-auto font-geist text-neutral-400" style="">Comprehensive range of precision heat sinks and anodizing services to meet your thermal management needs.</p>
+      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-6 sm:pt-10 pr-4 sm:pr-20 pb-6 sm:pb-10 pl-4 sm:pl-20">
+        <div class="animate-[slideUp_0.6s_ease-out] text-center mb-8 sm:mb-16">
+          <h2 class="text-3xl sm:text-7xl font-light text-white tracking-tighter font-geist mb-4 sm:mb-6" style="">Our Products</h2>
+          <p class="text-base sm:text-lg max-w-2xl mx-auto font-geist text-neutral-400 leading-relaxed" style="">Comprehensive range of precision heat sinks and anodizing services to meet your thermal management needs.</p>
           
           <!-- Download Catalogue Button -->
-          <div class="mt-8 mb-12 flex justify-center">
-            <a href="catalogue.pdf" download class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-3 pr-6 pb-3 pl-6 items-center justify-center">
+          <div class="mt-6 sm:mt-8 mb-8 sm:mb-12 flex justify-center">
+            <a href="catalogue.pdf" download class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-xs sm:text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-2.5 sm:pt-3 pr-4 sm:pr-6 pb-2.5 sm:pb-3 pl-4 sm:pl-6 items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -334,9 +357,9 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
   <!-- Extruded Aluminium Heat Sinks -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.1s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.1s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 relative overflow-hidden border-white/10 bg-white/5">
       <div class="flex items-center justify-center">
         <div class="grid grid-cols-3 gap-2 w-full">
@@ -369,7 +392,7 @@
   </div>
 
   <!-- Cast Heat Sinks -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.2s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.2s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 border-white/10 bg-white/5">
       <div class="flex items-center justify-center">
         <!-- Cast heat sink visualization -->
@@ -392,7 +415,7 @@
   </div>
 
   <!-- Machined/Milled Heat Sinks -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.3s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.3s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 space-y-3 border-white/10 bg-white/5">
       <!-- CNC machining visualization -->
       <div class="flex items-center justify-center">
@@ -425,7 +448,7 @@
   </div>
 
   <!-- BGA Type Heat Sinks -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.4s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.4s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 space-y-3 border-white/10 bg-white/5">
       <div class="flex items-center justify-center">
         <!-- BGA heat sink visualization -->
@@ -458,7 +481,7 @@
   </div>
 
   <!-- Pressed Aluminium Heat Sinks -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.5s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.5s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 border-white/10 bg-white/5">
       <div class="flex items-center justify-center">
         <!-- Pressed heat sink visualization -->
@@ -487,7 +510,7 @@
   </div>
 
   <!-- Anodizing Services -->
-  <div class="rounded-xl border p-6 animate-[slideUp_0.6s_ease-out_0.6s_both] border-white/10 bg-neutral-900/40 flex flex-col">
+  <div class="rounded-xl border p-4 sm:p-6 animate-[slideUp_0.6s_ease-out_0.6s_both] border-white/10 bg-neutral-900/40 flex flex-col">
     <div class="rounded-lg border p-4 mb-5 relative border-white/10 bg-white/5">
       <div class="flex items-center justify-center">
         <!-- Anodizing visualization -->
@@ -522,17 +545,17 @@
 
     <!-- Capabilities Section -->
     <section id="capabilities" class="sm:py- pt-0 pb-10">
-      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-10 pr-20 pb-10 pl-20">
+      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-6 sm:pt-10 pr-4 sm:pr-20 pb-6 sm:pb-10 pl-4 sm:pl-20">
   <!-- Header -->
-  <div class="animate-[slideUp_0.6s_ease-out] text-center mb-16">
+  <div class="animate-[slideUp_0.6s_ease-out] text-center mb-8 sm:mb-16">
     
-    <h2 class="sm:text-7xl text-4xl font-light text-white tracking-tighter font-geist mb-6" style="">Our Manufacturing Excellence</h2>
-    <p class="text-lg max-w-2xl mx-auto mt-6 font-geist text-neutral-400" style="">State-of-the-art equipment and skilled workforce delivering precision heat sinks since 1994.</p>
+    <h2 class="text-3xl sm:text-7xl font-light text-white tracking-tighter font-geist mb-4 sm:mb-6" style="">Our Manufacturing Excellence</h2>
+    <p class="text-base sm:text-lg max-w-2xl mx-auto mt-4 sm:mt-6 font-geist text-neutral-400 leading-relaxed" style="">State-of-the-art equipment and skilled workforce delivering precision heat sinks since 1994.</p>
   </div>
 
   <!-- Team Section -->
   <div class="overflow-hidden animate-[slideUp_0.6s_ease-out_0.1s_both] rounded-2xl">
-    <section class="sm:p-8 bg-zinc-900 rounded-3xl mt-8 pt-6 pr-6 pb-6 pl-6" style="position: relative; overflow: hidden;">
+    <section class="sm:p-8 bg-zinc-900 rounded-3xl mt-4 sm:mt-8 pt-4 pr-4 pb-4 pl-4 sm:pt-6 sm:pr-6 sm:pb-6 sm:pl-6" style="position: relative; overflow: hidden;">
       <!-- Background dividers -->
       <div class="absolute inset-0 opacity-10 pointer-events-none">
         <div class="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent"></div>
@@ -687,12 +710,12 @@
   </div>
 </div>
     </section>    <section id="contact" class="sm:py- pt-0 pb-10 items-center">
-      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-10 pr-20 pb-10 pl-20">
+      <div class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-3xl mr-auto ml-auto pt-6 sm:pt-10 pr-4 sm:pr-20 pb-6 sm:pb-10 pl-4 sm:pl-20">
   <!-- Header -->
-  <div class="flex flex-col animate-[slideUp_0.6s_ease-out] mb-12">
-    <div class="mb-6 text-center">
-      <h2 class="sm:text-7xl text-4xl font-light text-white tracking-tighter font-geist mb-6" style="">Get a Quote</h2>
-      <p class="text-lg max-w-2xl mx-auto font-geist text-neutral-400" style="">Custom heat sink solutions tailored to your specifications. Contact us for competitive pricing and fast turnaround.</p>
+  <div class="flex flex-col animate-[slideUp_0.6s_ease-out] mb-8 sm:mb-12">
+    <div class="mb-4 sm:mb-6 text-center">
+      <h2 class="text-3xl sm:text-7xl font-light text-white tracking-tighter font-geist mb-4 sm:mb-6" style="">Get a Quote</h2>
+      <p class="text-base sm:text-lg max-w-2xl mx-auto font-geist text-neutral-400 leading-relaxed" style="">Custom heat sink solutions tailored to your specifications. Contact us for competitive pricing and fast turnaround.</p>
     </div>
   </div>
 
@@ -700,12 +723,12 @@
   <div class="rounded-2xl border overflow-hidden border-white/10 bg-neutral-900/40 animate-[slideUp_0.6s_ease-out_0.1s_both]">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <!-- Left: Contact Info (light card) -->
-      <div class="sm:p-6 lg:p-8 pt-5 pr-5 pb-5 pl-5">
-        <div class="relative rounded-2xl border border-white/10 bg-neutral-100 text-neutral-900 p-5 sm:p-6 lg:p-7">
+      <div class="sm:p-6 lg:p-8 pt-4 pr-4 pb-4 pl-4 sm:pt-5 sm:pr-5 sm:pb-5 sm:pl-5">
+        <div class="relative rounded-2xl border border-white/10 bg-neutral-100 text-neutral-900 p-4 sm:p-5 lg:p-7">
           <div class="absolute top-4 right-5 text-xs font-geist text-neutral-500 select-none" style="">Est. 1994</div>
             <div class="">
             <div class="text-sm font-geist font-medium tracking-tight text-neutral-700 mb-1" style="">Contact Information</div>
-            <h3 class="text-2xl sm:text-3xl font-geist font-medium tracking-tight text-neutral-900 mb-6" style="">SHAN ENTERPRISES</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-geist font-medium tracking-tight text-neutral-900 mb-4 sm:mb-6" style="">SHAN ENTERPRISES</h3>
             
             <div class="space-y-4 text-sm font-geist text-neutral-700">
               <div>
@@ -730,7 +753,7 @@
       </div>
 
       <!-- Right: Why Choose Us + CTA -->
-      <div class="lg:p-8 flex flex-col bg-black/20 pt-6 pr-6 pb-6 pl-6 justify-between">
+      <div class="lg:p-8 flex flex-col bg-black/20 pt-4 pr-4 pb-4 pl-4 sm:pt-6 sm:pr-6 sm:pb-6 sm:pl-6 justify-between">
         <div class="">
           <div class="text-sm font-geist text-neutral-400 mb-4" style="">Why Choose Us:</div>
           <ul class="space-y-3">
@@ -765,19 +788,19 @@
           </ul>
         </div>
 
-        <div class="mt-8 flex items-center justify-between gap-6">
+        <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
           <div class="">
             <div class="text-sm font-geist text-neutral-400" style="">Business Hours</div>
             <div class="text-neutral-100 font-geist" style="">Mon-Sat, 9 AM - 6 PM</div>
           </div>
-          <div class="flex items-center gap-3">
-            <a href="https://www.linkedin.com/company/shan-enterprises" target="_blank" rel="noopener noreferrer" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-3 pr-6 pb-3 pl-6 items-center justify-center" style="">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <a href="https://www.linkedin.com/company/shan-enterprises" target="_blank" rel="noopener noreferrer" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-xs sm:text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-2.5 sm:pt-3 pr-4 sm:pr-6 pb-2.5 sm:pb-3 pl-4 sm:pl-6 items-center justify-center" style="">
               Follow Us
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-          <a href="tel:+919845033317" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-3 pr-6 pb-3 pl-6 items-center justify-center" style="">
+          <a href="tel:+919845033317" class="flex gap-2 ring-1 ring-white/20 hover:bg-white/15 transition-colors text-xs sm:text-sm text-neutral-100 font-geist bg-white/10 rounded-full pt-2.5 sm:pt-3 pr-4 sm:pr-6 pb-2.5 sm:pb-3 pl-4 sm:pl-6 items-center justify-center" style="">
             Call Now
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </a>
@@ -798,7 +821,7 @@
 
 
     <!-- Footer -->
-    <footer class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-2xl mr-auto ml-auto pt-8 pr-20 pb-4 pl-20">
+    <footer class="relative max-w-6xl sm:px-6 lg:px-8 bg-neutral-950 rounded-2xl mr-auto ml-auto pt-6 sm:pt-8 pr-4 sm:pr-20 pb-4 pl-4 sm:pl-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-start justify-between mb-6">
           <div class="flex flex-col gap-2 mb-4 md:mb-0">
@@ -1043,6 +1066,38 @@
           closeQuoteModal();
         }
       });
+
+      // Mobile menu functions
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          menuButton.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          `;
+        } else {
+          closeMobileMenu();
+        }
+      }
+
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        
+        mobileMenu.classList.add('hidden');
+        menuButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <path d="M3 12h18"></path>
+            <path d="M3 6h18"></path>
+            <path d="M3 18h18"></path>
+          </svg>
+        `;
+      }
     </script>
   
     <style>
